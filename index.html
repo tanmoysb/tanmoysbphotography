@@ -858,51 +858,27 @@
 
               <div class="input-group outer-shadow hover-in-shadow">
                 <input type="text" placeholder="Name" name="name" class="input-control" value="<?php if(isset($name)) echo $name; ?>">
-                <span>
-                  <?php
-                    if(isset($error['name'])){
-                      echo $error['name'];
-                    }
-                  ?>
-                </span>
+               
               </div>
 
 
               <div class="input-group outer-shadow hover-in-shadow">
-                <input type="email" placeholder="Email" name="email" class="input-control" value="<?php if(isset($email)) echo $email; ?>" >
-                 <span>
-                  <?php
-                    if(isset($error['email'])){
-                      echo $error['email'];
-                    }
-                  ?>
-                </span>
+                <input type="email" placeholder="Email" name="email" class="input-control">
+                 
               </div>
 
 
               <div class="input-group outer-shadow hover-in-shadow">
-                <input type="text" placeholder="Subject" name="subject" class="input-control" value="<?php if(isset($subject)) echo $subject; ?>"  >
-                 <span>
-                  <?php
-                    if(isset($error['subject'])){
-                      echo $error['subject'];
-                    }
-                  ?>
-                </span>
+                <input type="text" placeholder="Subject" name="subject" class="input-control">
+                 
               </div>
 
 
             </div>
             <div class="w-50">
               <div class="input-group outer-shadow hover-in-shadow"> 
-                <textarea class="input-control" placeholder="Message" name="message" value="<?php if(isset($message)) echo $message; ?>"  ></textarea>
-                 <span>
-                  <?php
-                    if(isset($error['message'])){
-                      echo $error['message'];
-                    }
-                  ?>
-                </span>
+                <textarea class="input-control" placeholder="Message" name="message"></textarea>
+  
               </div>
 
 
@@ -923,48 +899,6 @@
 
 
 <!-- Contact message Send backend Code PHP STARt-->
-
-<?php
-
-  if(isset($_POST['send-btn'])){
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $subject = $_POST['subject'];
-    $message = $_POST['message'];
-
-    $error = [];
-
-    if(empty($_POST['name'])){
-      $error['name'] = 'Insert Your Name';
-    }
-    if(empty($_POST['email'])){
-      $error['email'] = 'Insert Your Email';
-    }
-    if(empty($_POST['subject'])){
-      $error['subject'] = 'Insert Your Subject';
-    }
-    if(empty($_POST['message'])){
-      $error['message'] = 'Insert Your Message';
-    }
-
-    $to = 'tanmoysbphotography@gmail.com';
-    $from = 'From '.$email;
-    $subject = 'Subject '.$subject;
-    $body = 'Name: '.$name. '\n Subject: '.$subject. '\n Email: '.$email. '\n Message: '.$message;
-
-    $check = mail($to, $from, $body);
-    if($check == true){
-      echo "Send Successfully!";
-    }
-    else{
-      echo "Not Send!";
-    }
-  }
-
-?>
-
-<!-- PHP code end-->
-
 
 <!---Contact Section End-->
 
